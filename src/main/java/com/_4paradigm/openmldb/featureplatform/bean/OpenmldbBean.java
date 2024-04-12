@@ -27,7 +27,9 @@ public class OpenmldbBean {
         option.setZkCluster(zkHost);
         option.setZkPath(zkPath);
         option.setUser(username);
-        option.setPassword(password);
+        if(password != null) {
+            option.setPassword(password);
+        }
 
         SqlClusterExecutor sqlExecutor = null;
         try {
